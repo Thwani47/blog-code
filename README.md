@@ -1,2 +1,4 @@
 # hugo-blog-code
-Code from my blog
+Code  samples for my blog
+
+[Vite React Example](/vite-react-example)
