@@ -1,5 +1,4 @@
-# hugo-blog-code
-Code  samples for my blog
+## Source code for my [blog](https://thwanisithole.co.za/)
 
-[Vite React Example](/vite-react-example)
-[Minimal API Example](/MinimalApiExample)
+- [Vite React Example](/vite-react-example)
+- [Minimal API Example](/MinimalApiExample)
