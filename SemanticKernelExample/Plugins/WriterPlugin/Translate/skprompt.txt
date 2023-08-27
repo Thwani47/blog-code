@@ -1,0 +1,3 @@
+Translate this piece of text to {{$target}}:
+{{$input}}
++++++

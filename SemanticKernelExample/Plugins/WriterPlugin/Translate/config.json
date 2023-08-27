@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "type": "completion",
+  "description": "Translate a piece of text from English to a target language",
+  "completion": {
+    "max_tokens": 500
+  },
+  "input": {
+    "parameters": [
+      {
+        "name": "input",
+        "description": "The text to translate",
+        "defaultValue": ""
+      },
+      {
+        "name": "target",
+        "description": "The target language to translate to",
+        "defaultValue": "Spanish"
+      }
+    ]
+  }
+}

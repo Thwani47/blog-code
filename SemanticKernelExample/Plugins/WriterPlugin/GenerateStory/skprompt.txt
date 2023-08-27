@@ -1,0 +1,8 @@
+[Story rules]
+- The story should be written in the third person.
+- The story should at most have 2 sub chapters
+- Be creative and have fun!
+- The story should be less than 8 lines
+
+Write a short story about {{$input}}
++++++

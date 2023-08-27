@@ -1,0 +1,7 @@
+Write a short poem about this topic below
+- The poem must be in Shakespearean sonnet form. 
+- Be creative. 
+- The poem should be at most 6 lines
++++++
+{{$input}}
++++++
