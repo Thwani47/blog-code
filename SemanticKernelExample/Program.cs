@@ -7,8 +7,9 @@ var configuration = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentD
     .Build();
 var apiKey = configuration.GetSection("OpenAI:APIKey").Value;
 
-var logger = NullLogger.Instance;
-var kernel = new KernelBuilder().WithLogger(logger).WithOpenAITextCompletionService("text-davinci-003", apiKey!)
+var loggerFactory = NullLoggerFactory.Instance;
+var kernel = new KernelBuilder().WithLoggerFactory(loggerFactory)
+    .WithOpenAITextCompletionService("text-davinci-003", apiKey!)
     .Build();
 
 

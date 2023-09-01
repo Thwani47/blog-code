@@ -11,7 +11,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0-preview.7.23375.6" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="7.0.0" />
-    <PackageReference Include="Microsoft.SemanticKernel" Version="0.20.230821.4-preview" />
+    <PackageReference Include="Microsoft.SemanticKernel" Version="0.21.230828.2-preview" />
   </ItemGroup>
 
   <ItemGroup>
