@@ -77,51 +77,38 @@ def make_position_pattern(pos_square_size):
     # remove the following line when you add something to this function:
     pattern = [[0 for _ in range(pos_square_size)] for _ in range(pos_square_size)]
     
-    if pos_square_size == 4:
-        # Fill the first 3 columns of the first 3 rows with 1s
-        for i in range(3):
-            for j in range(3):
-                pattern[i][j] = 1
+    base_pattern = [[0 for _ in range(4)] for _ in range(4)]
     
-    elif pos_square_size == 6:
-        # Fill the last column with 1s except the last position
-        for i in range(pos_square_size - 1):
-            pattern[i][pos_square_size - 1] = 1
-            
-        # Fill the last row with 1s
-        for j in range(pos_square_size):
-            pattern[pos_square_size - 1][j] = 1
-            
-        # Fill the middle 3x3 square with 1s
-        for i in range(1, 4):
-            for j in range(1, 4):
-                pattern[i][j] = 1
+    for i in range(3):
+        for j in range(3):
+            base_pattern[i][j] = 1
+      
     
-    else:  # pos_square_size >= 8
-        # Fill the first column with 1s except the last position
-        for i in range(pos_square_size - 1):
-            pattern[i][0] = 1
+    start_row = (pos_square_size - 4) // 2
+    start_col = (pos_square_size-4) // 2
+    
+    end_row = pos_square_size - start_row
+    end_col = pos_square_size - start_col
+    
+    for i in range(4):
+        for  j in range(4):
+            pattern[start_row+i][start_col+j] = base_pattern[i][j]
+           
+    
+    for row in range(start_row-1, -1, -1):
+        for col in range(pos_square_size):
+            print(row, col)
+ 
             
-        # Fill the first row with 1s except the last position
-        for j in range(pos_square_size - 1):
-            pattern[0][j] = 1
-            
-        # Fill the 7th column with 1s except the last position
-        for i in range(pos_square_size - 1):
-            pattern[i][pos_square_size - 2] = 1
-            
-        # Fill the 7th row with 1s except the last position
-        for j in range(pos_square_size - 1):
-            pattern[pos_square_size - 2][j] = 1
-            
-        # Fill the inner square pattern (3x3) repeated
-        inner_start = 2
-        inner_end = pos_square_size - 3
-        for i in range(inner_start, inner_end):
-            for j in range(inner_start, inner_end):
-                pattern[i][j] = 1
-                
-    return pattern
+    for col in range(pos_square_size):
+        if pattern[pos_square_size-2][col] == 0:
+            pattern[pos_square_size-1][col] = 1
+        
+    for row in range(pos_square_size):
+        if pattern[row][pos_square_size-2]==0:
+            pattern[row][pos_square_size-1] = 1
+
+    return pattern 
                     
 
 
