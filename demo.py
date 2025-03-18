@@ -136,20 +136,25 @@ def make_alignment_pattern(align_square_size):
     Returns:
         2D array of int: The alignment pattern
     """
-    # TODO: implement this function.
-    # remove the following line when you add something to this function:
+    if align_square_size == 1:
+        return [[1]]
+    
     align_pattern = [[0 for _ in range(align_square_size)] for _ in range(align_square_size)]
     
-    for row in range(align_square_size):
-        align_pattern[0][row] = 1
-        align_pattern[align_square_size-1][row] = 1
-        align_pattern[row][0] = 1
-        align_pattern[row][align_square_size-1] = 1
+    # we'll solve this using the idea of concentric squares
+    # example in Java: https://medium.com/@ashishkumarjena1437/how-to-print-a-2d-matrix-with-concentric-layers-in-java-c57b5f33aab5
+    for square in range((align_square_size + 1) // 2):
+        cell_value = 0
         
-    for row in range(2, align_square_size-2):
-        for col in range(2, align_square_size-2):
-            if (row-2) % 2 == 0 and (col - 2) % 2 == 0:
-                align_pattern[row][col] = 1
+        # fill even squares with 1 and odd squares with 0
+        if square % 2 == 0: 
+            cell_value = 1
+            
+        for cell in range(square, align_square_size - square):
+            align_pattern[square][cell] = cell_value
+            align_pattern[cell][square] = cell_value
+            align_pattern[cell][align_square_size - square -1 ] = cell_value
+            align_pattern[align_square_size - square - 1][cell] = cell_value
     
     return align_pattern
 
